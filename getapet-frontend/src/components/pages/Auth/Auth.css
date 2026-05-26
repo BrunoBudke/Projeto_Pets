@@ -1,0 +1,26 @@
+.upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #c7d9f5;
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-height: 80px;
+}
+
+.upload-label:hover { border-color: #16479d; }
+
+.upload-preview {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-placeholder {
+  color: #bbb;
+  font-weight: 700;
+  font-size: 0.95rem;
+}

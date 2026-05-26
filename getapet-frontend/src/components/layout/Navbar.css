@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 3rem;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(22, 71, 157, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Nunito', sans-serif;
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #16479d;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+  font-size: 0.93rem;
+  transition: color 0.2s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #16479d;
+}
+
+.nav-link--register {
+  background: #16479d;
+  color: #fff !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+}
+
+.nav-link--register:hover {
+  background: #0f3278;
+  opacity: 1;
+}
+
+.nav-link--add {
+  background: #f0f7ff;
+  color: #16479d !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  border: 1.5px solid #c7d9f5;
+}
+
+.nav-link--add:hover,
+.nav-link--add.active {
+  background: #16479d;
+  color: #fff !important;
+  border-color: #16479d;
+}
+
+.nav-logout {
+  color: #e53935 !important;
+}
+
+.nav-logout:hover {
+  color: #b71c1c !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

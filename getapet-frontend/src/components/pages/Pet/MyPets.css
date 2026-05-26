@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.mypets-page { min-height: 100vh; background: linear-gradient(160deg,#f0f4ff,#faf5ff); font-family:'Nunito',sans-serif; }
+
+.mypets-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+.mypets-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.mypets-top h1 { font-size: 2rem; font-weight: 900; color: #1a1a2e; }
+.mypets-top p  { color: #888; font-size: 0.9rem; margin-top: 0.2rem; }
+
+.btn-add-pet {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg,#16479d,#2563eb); color: #fff; text-decoration: none;
+  padding: 0.75rem 1.6rem; border-radius: 50px; font-weight: 900; font-size: 0.95rem;
+  box-shadow: 0 4px 16px rgba(22,71,157,0.28); transition: transform 0.2s, opacity 0.2s;
+  white-space: nowrap;
+}
+.btn-add-pet:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.mypets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.mypet-card {
+  background: #fff; border-radius: 20px; overflow: hidden;
+  box-shadow: 0 0 0 2px #dce8ff, 0 8px 28px rgba(22,71,157,0.08);
+  display: flex; flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.mypet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2.5px #16479d, 0 20px 44px rgba(22,71,157,0.15);
+}
+
+.mypet-img-wrap { position: relative; height: 200px; overflow: hidden; flex-shrink: 0; }
+.mypet-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.mypet-card:hover .mypet-img { transform: scale(1.05); }
+.mypet-emoji-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4.5rem; background: linear-gradient(135deg,#f0f4ff,#e8f0fe);
+}
+.mypet-badge {
+  position: absolute; top: 10px; right: 10px;
+  font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.75rem;
+  border-radius: 50px; backdrop-filter: blur(6px);
+}
+.badge-available { background: rgba(232,245,233,0.95); color: #2e7d32; }
+.badge-adopted   { background: rgba(255,235,238,0.95); color: #c62828; }
+
+.mypet-body { padding: 1.2rem 1.4rem 1.4rem; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
+.mypet-name  { font-size: 1.2rem; font-weight: 900; color: #1a1a2e; }
+.mypet-breed { font-size: 0.72rem; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.07em; }
+.mypet-meta  { display: flex; gap: 1rem; font-size: 0.84rem; font-weight: 700; color: #555; margin: 0.3rem 0 0.6rem; }
+
+.mypet-actions { display: flex; gap: 0.6rem; margin-top: auto; }
+.btn-mypet-view {
+  flex: 1; background: #f0f4ff; color: #16479d; text-decoration: none;
+  padding: 0.65rem 0; border-radius: 10px; font-weight: 800;
+  font-size: 0.85rem; text-align: center; border: 1.5px solid #c7d9f5;
+  transition: background 0.2s;
+}
+.btn-mypet-view:hover { background: #dce8ff; }
+.btn-mypet-delete {
+  background: #fff5f5; color: #e53935; border: 1.5px solid #fecaca;
+  padding: 0.65rem 1rem; border-radius: 10px; font-size: 0.85rem;
+  font-weight: 800; font-family:'Nunito',sans-serif; cursor: pointer;
+  transition: background 0.2s; white-space: nowrap;
+}
+.btn-mypet-delete:hover { background: #ffe4e6; }
+
+
+.mypets-empty {
+  text-align: center; padding: 5rem 1rem; color: #888;
+  display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+}
+.mypets-empty span { font-size: 4rem; }
+.mypets-empty h3 { font-size: 1.4rem; font-weight: 900; color: #1a1a2e; }
+
+
+.mypets-loading {
+  text-align: center; padding: 4rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem; color: #888; font-weight: 700;
+}
+.mypets-spinner {
+  width: 40px; height: 40px; border: 4px solid #dce8ff;
+  border-top-color: #16479d; border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+
+.delete-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center; z-index: 200;
+  backdrop-filter: blur(4px);
+}
+.delete-modal {
+  background: #fff; border-radius: 24px; padding: 2.5rem 2rem;
+  max-width: 400px; width: 90%; text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2); animation: popIn 0.2s ease;
+}
+@keyframes popIn { from { transform: scale(0.9); opacity:0; } to { transform: scale(1); opacity:1; } }
+.delete-modal-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+.delete-modal h3 { font-size: 1.3rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.5rem; }
+.delete-modal p  { color: #888; font-size: 0.9rem; margin-bottom: 1.8rem; }
+.delete-modal-btns { display: flex; gap: 0.75rem; justify-content: center; }
+.btn-cancel {
+  background: #f0f4ff; color: #444; border: 1.5px solid #dce8ff;
+  padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 800;
+  font-family:'Nunito',sans-serif; cursor: pointer; font-size: 0.9rem;
+}
+.btn-delete-confirm {
+  background: #e53935; color: #fff; border: none;
+  padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 800;
+  font-family:'Nunito',sans-serif; cursor: pointer; font-size: 0.9rem;
+}
+
+@media (max-width: 900px) { .mypets-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .mypets-grid { grid-template-columns: 1fr; }
+  .mypets-main { padding: 2rem 1rem 4rem; }
+}
