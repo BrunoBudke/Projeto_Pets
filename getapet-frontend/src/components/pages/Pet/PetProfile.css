@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.profile-page { min-height: 100vh; background: linear-gradient(160deg,#f0f4ff,#faf5ff); font-family: 'Nunito',sans-serif; }
+
+.profile-main {
+  max-width: 900px; margin: 0 auto; padding: 3rem 2rem;
+  display: grid; grid-template-columns: 340px 1fr; gap: 2.5rem;
+}
+
+.profile-avatar-wrap { position: sticky; top: 100px; align-self: start; }
+.profile-avatar-img {
+  width: 100%; aspect-ratio: 1; border-radius: 24px; object-fit: cover;
+  box-shadow: 0 12px 40px rgba(22,71,157,0.18);
+}
+
+.profile-card {
+  background: #fff; border-radius: 24px; padding: 2.5rem;
+  box-shadow: 0 0 0 2px #dce8ff, 0 12px 40px rgba(22,71,157,0.09);
+}
+
+.profile-name  { font-size: 2.2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.3rem; }
+.profile-breed { font-size: 0.85rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+
+.profile-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.detail-item { background: #f8faff; border-radius: 14px; padding: 1rem 1.2rem; border: 1.5px solid #dce8ff; }
+.detail-label { font-size: 0.72rem; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+.detail-value { font-size: 1.05rem; font-weight: 900; color: #1a1a2e; margin-top: 0.2rem; }
+.status-ok { color: #2e7d32; }
+.status-no { color: #c62828; }
+
+.profile-description { background: #f8faff; border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; border: 1.5px solid #dce8ff; }
+.profile-description h3 { font-size: 0.9rem; font-weight: 800; color: #16479d; margin-bottom: 0.5rem; }
+.profile-description p { color: #444; font-size: 0.95rem; line-height: 1.6; }
+
+.btn-adopt-profile {
+  display: block; background: linear-gradient(135deg,#16479d,#2563eb);
+  color: #fff; text-decoration: none; padding: 1rem;
+  border-radius: 16px; font-weight: 900; font-size: 1.05rem;
+  text-align: center; box-shadow: 0 6px 20px rgba(22,71,157,0.3);
+  transition: transform 0.2s, opacity 0.2s; margin-top: 1rem;
+}
+.btn-adopt-profile:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.btn-adopt-outline {
+  display: inline-block; background: #fff; color: #16479d;
+  text-decoration: none; padding: 0.8rem 1.6rem;
+  border-radius: 50px; font-weight: 800; border: 2px solid #16479d; margin-top: 0.5rem;
+}
+
+.adopt-cta { margin-top: 1rem; text-align: center; }
+.adopt-cta p { color: #888; font-weight: 700; margin-bottom: 0.75rem; }
+.adopt-cta-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+.adopted-msg {
+  text-align: center; padding: 1.5rem; background: #fff8f8;
+  border-radius: 16px; border: 1.5px solid #fecaca; margin-top: 1rem;
+}
+.adopted-msg span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.adopted-msg p { color: #666; font-size: 0.95rem; margin-bottom: 1rem; }
+
+.pet-not-found {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 50vh; gap: 1rem; color: #888; font-weight: 700;
+}
+.pet-not-found span { font-size: 3.5rem; }
+.pet-not-found h2 { color: #1a1a2e; font-size: 1.5rem; }
+.pet-not-found a { color: #16479d; }
+
+@media (max-width: 768px) {
+  .profile-main { grid-template-columns: 1fr; padding: 1.5rem; }
+  .profile-avatar-wrap { position: static; }
+}

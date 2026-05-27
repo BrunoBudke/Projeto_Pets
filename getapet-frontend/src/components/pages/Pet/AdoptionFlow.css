@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.af-page { min-height: 100vh; background: linear-gradient(160deg,#f0f4ff,#faf5ff); font-family:'Nunito',sans-serif; }
+
+.af-main { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+
+
+.af-pet-bar {
+  display: flex; align-items: center; gap: 1rem;
+  background: #fff; border-radius: 16px; padding: 1rem 1.4rem;
+  box-shadow: 0 2px 12px rgba(22,71,157,0.08); margin-bottom: 2rem;
+  border: 1.5px solid #dce8ff;
+}
+.af-pet-thumb { width: 52px; height: 52px; border-radius: 12px; object-fit: cover; }
+.af-pet-label { font-size: 0.72rem; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+.af-pet-name { font-size: 1.05rem; font-weight: 900; color: #1a1a2e; }
+.af-pet-name span { color: #888; font-weight: 600; }
+
+
+.af-steps {
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative; margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+}
+.af-steps::before {
+  content: ''; position: absolute; top: 20px; left: 0; right: 0; height: 3px;
+  background: #e8edf5; border-radius: 2px; z-index: 0;
+}
+.af-step-line {
+  position: absolute; top: 20px; left: 0; height: 3px;
+  background: linear-gradient(90deg,#16479d,#2563eb);
+  border-radius: 2px; z-index: 1;
+  transition: width 0.4s ease;
+}
+.af-step {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  position: relative; z-index: 2; flex: 1;
+}
+.af-step-circle {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #e8edf5; color: #aaa; font-weight: 900; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+.af-step.active .af-step-circle { background: #16479d; color: #fff; box-shadow: 0 4px 12px rgba(22,71,157,0.3); }
+.af-step.done   .af-step-circle { background: #22c55e; color: #fff; }
+.af-step span { font-size: 0.78rem; font-weight: 800; color: #aaa; white-space: nowrap; }
+.af-step.active span { color: #16479d; }
+.af-step.done   span { color: #22c55e; }
+
+
+.af-card {
+  background: #fff; border-radius: 24px; padding: 2.5rem;
+  box-shadow: 0 0 0 2px #dce8ff, 0 12px 36px rgba(22,71,157,0.08);
+  margin-bottom: 1.5rem;
+}
+.af-card h2 { font-size: 1.5rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.3rem; }
+.af-card-sub { color: #888; font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+
+.af-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.af-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.af-field label { font-size: 0.85rem; font-weight: 700; color: #444; }
+.af-field input, .af-field textarea {
+  padding: 0.8rem 1rem; border: 2px solid #e8edf5; border-radius: 12px;
+  font-size: 0.95rem; font-family:'Nunito',sans-serif; color: #1a1a2e;
+  outline: none; transition: border-color 0.2s; resize: vertical;
+}
+.af-field input:focus, .af-field textarea:focus { border-color: #16479d; }
+.af-field input.error, .af-field textarea.error { border-color: #e53935; }
+.af-error { font-size: 0.8rem; color: #e53935; font-weight: 700; }
+
+
+.af-section-label { font-size: 0.88rem; font-weight: 800; color: #444; display: block; margin-bottom: 0.75rem; }
+.af-dates { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.af-date-btn {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0.7rem 0.9rem; border: 2px solid #e8edf5;
+  border-radius: 14px; background: #fff; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s; gap: 0.1rem;
+  font-family:'Nunito',sans-serif; min-width: 62px;
+}
+.af-date-btn:hover { border-color: #16479d; background: #f0f4ff; }
+.af-date-btn.selected { border-color: #16479d; background: #16479d; }
+.af-date-weekday { font-size: 0.7rem; font-weight: 800; color: #aaa; text-transform: uppercase; }
+.af-date-btn.selected .af-date-weekday { color: #93c5fd; }
+.af-date-day   { font-size: 1.2rem; font-weight: 900; color: #1a1a2e; }
+.af-date-btn.selected .af-date-day { color: #fff; }
+.af-date-month { font-size: 0.7rem; font-weight: 700; color: #aaa; }
+.af-date-btn.selected .af-date-month { color: #bfdbfe; }
+
+.af-times { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.af-time-btn {
+  padding: 0.55rem 1.1rem; border: 2px solid #e8edf5;
+  border-radius: 50px; background: #fff; cursor: pointer;
+  font-size: 0.9rem; font-weight: 800; font-family:'Nunito',sans-serif;
+  color: #444; transition: border-color 0.2s, background 0.2s;
+}
+.af-time-btn:hover { border-color: #16479d; background: #f0f4ff; }
+.af-time-btn.selected { border-color: #16479d; background: #16479d; color: #fff; }
+
+
+.af-review { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.af-review-section { background: #f8faff; border-radius: 14px; padding: 1.2rem 1.4rem; border: 1.5px solid #dce8ff; }
+.af-review-section h4 { font-size: 0.85rem; font-weight: 800; color: #16479d; margin-bottom: 0.75rem; }
+.af-review-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 0.35rem 0; border-bottom: 1px solid #eef1f8; }
+.af-review-row:last-child { border-bottom: none; }
+.af-review-row span { font-size: 0.85rem; color: #888; font-weight: 600; }
+.af-review-row strong { font-size: 0.9rem; color: #1a1a2e; text-align: right; max-width: 60%; }
+
+.af-terms { display: flex; gap: 0.75rem; align-items: flex-start; }
+.af-terms input { width: 18px; height: 18px; margin-top: 2px; accent-color: #16479d; flex-shrink: 0; }
+.af-terms label { font-size: 0.85rem; color: #555; line-height: 1.5; font-weight: 600; }
+
+
+.af-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.af-btn-back {
+  background: #f0f4ff; color: #16479d; border: 1.5px solid #c7d9f5;
+  padding: 0.85rem 1.6rem; border-radius: 14px; font-weight: 800;
+  font-size: 0.95rem; font-family:'Nunito',sans-serif; cursor: pointer;
+}
+.af-btn-next {
+  margin-left: auto; background: linear-gradient(135deg,#16479d,#2563eb); color: #fff; border: none;
+  padding: 0.85rem 2rem; border-radius: 14px; font-weight: 900;
+  font-size: 0.95rem; font-family:'Nunito',sans-serif; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(22,71,157,0.3); transition: opacity 0.2s, transform 0.2s;
+}
+.af-btn-next:hover { opacity: 0.9; transform: translateY(-1px); }
+.af-btn-confirm {
+  margin-left: auto; background: linear-gradient(135deg,#22c55e,#16a34a); color: #fff; border: none;
+  padding: 0.85rem 2rem; border-radius: 14px; font-weight: 900;
+  font-size: 0.95rem; font-family:'Nunito',sans-serif; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(34,197,94,0.35); transition: opacity 0.2s;
+}
+.af-btn-confirm:disabled { opacity: 0.6; cursor: not-allowed; }
+
+
+.af-success {
+  max-width: 580px; margin: 4rem auto; text-align: center;
+  background: #fff; border-radius: 28px; padding: 3rem 2.5rem;
+  box-shadow: 0 0 0 2px #dce8ff, 0 16px 48px rgba(22,71,157,0.10);
+}
+.af-success-icon { font-size: 4rem; margin-bottom: 1rem; }
+.af-success h2 { font-size: 2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.8rem; }
+.af-success p { color: #555; font-size: 1rem; line-height: 1.6; }
+.af-success-box {
+  display: flex; gap: 1.5rem; justify-content: center;
+  background: #f0f4ff; border-radius: 16px; padding: 1.2rem;
+  margin: 1.5rem 0; font-size: 1.05rem; font-weight: 800; color: #16479d;
+}
+.af-success-sub { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.af-success-pet {
+  display: flex; align-items: center; gap: 1rem; justify-content: center;
+  background: #f0fff4; border-radius: 16px; padding: 1rem 1.5rem;
+  font-weight: 800; color: #065f46; margin-bottom: 2rem;
+}
+.af-success-pet img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
+.af-btn-home {
+  display: inline-block; background: #16479d; color: #fff; text-decoration: none;
+  padding: 0.9rem 2.5rem; border-radius: 50px; font-weight: 900; font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(22,71,157,0.3); transition: transform 0.2s;
+}
+.af-btn-home:hover { transform: translateY(-2px); }
+
+.af-notfound {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 50vh; gap: 1rem; color: #888; font-weight: 700;
+}
+.af-notfound span { font-size: 3.5rem; }
+
+@media (max-width: 600px) {
+  .af-card { padding: 1.5rem; }
+  .af-dates { gap: 0.4rem; }
+  .af-date-btn { min-width: 52px; padding: 0.6rem 0.6rem; }
+}

@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.explore-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f0f4ff 0%, #faf5ff 100%);
+  font-family: 'Nunito', sans-serif;
+}
+
+.explore-hero {
+  background: linear-gradient(135deg, #16479d 0%, #2563eb 100%);
+  padding: 3.5rem 3rem 2.5rem;
+  text-align: center;
+  color: #fff;
+}
+.explore-hero-inner { max-width: 700px; margin: 0 auto; }
+.explore-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 0.8rem; }
+.explore-hero h1 span { color: #93c5fd; }
+.explore-hero p { font-size: 1.05rem; opacity: 0.88; margin-bottom: 1.5rem; line-height: 1.6; }
+
+.explore-api-badges {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.api-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
+.api-badge--blue   { background: rgba(147, 197, 253, 0.25); border: 1.5px solid rgba(147, 197, 253, 0.5); color: #e0f2fe; }
+.api-badge--purple { background: rgba(216, 180, 254, 0.25); border: 1.5px solid rgba(216, 180, 254, 0.5); color: #f3e8ff; }
+
+
+.explore-tabs {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border-bottom: 2px solid #eef1f8;
+  padding: 0 3rem;
+}
+.explore-tab {
+  background: none;
+  border: none;
+  padding: 1.1rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.explore-tab:hover { color: #16479d; }
+.explore-tab.active { color: #16479d; border-bottom-color: #16479d; }
+
+
+.explore-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 3rem 5rem;
+}
+
+
+.explore-search-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+.explore-search-bar input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #dce8ff;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+.explore-search-bar input:focus { border-color: #16479d; }
+.btn-search {
+  background: #16479d;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.btn-search:hover:not(:disabled) { background: #0f3278; transform: translateY(-1px); }
+.btn-search:disabled { opacity: 0.5; cursor: not-allowed; }
+
+
+.breed-chips-section { margin-bottom: 2rem; }
+.chips-label { font-size: 0.8rem; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+.breed-suggestions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.breed-suggestion-chip {
+  background: #fff;
+  border: 1.5px solid #dce8ff;
+  color: #16479d;
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.breed-suggestion-chip:hover { background: #e8f0fe; border-color: #16479d; }
+
+
+.explore-empty {
+  text-align: center; padding: 3rem 1rem; color: #aaa;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.explore-empty span { font-size: 3.5rem; }
+.explore-loading {
+  text-align: center; padding: 4rem 1rem; color: #888;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem; font-weight: 700;
+}
+.spinner {
+  width: 42px; height: 42px;
+  border: 4px solid #dce8ff; border-top-color: #16479d;
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.explore-error {
+  text-align: center; padding: 3rem 1rem; color: #e53935;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-weight: 700;
+}
+.explore-error span { font-size: 2.5rem; }
+
+
+.breed-detail-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 0 0 2px #dce8ff, 0 12px 40px rgba(22,71,157,0.10);
+}
+
+.api-source-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+.api-source-tag--blue   { background: #dbeafe; color: #1d4ed8; }
+.api-source-tag--purple { background: #ede9fe; color: #7c3aed; }
+
+
+.breed-detail-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; }
+.breed-detail-gallery .gallery-main {
+  grid-column: 1 / -1;
+  width: 100%; height: 240px; object-fit: cover;
+  border-radius: 16px;
+}
+.breed-detail-gallery .gallery-thumb {
+  width: 100%; height: 110px; object-fit: cover;
+  border-radius: 12px;
+}
+
+
+.breed-detail-name {
+  font-size: 1.9rem; font-weight: 900; color: #1a1a2e;
+  margin-bottom: 0.6rem; text-transform: capitalize;
+}
+.breed-detail-desc {
+  color: #555; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.5rem;
+}
+
+.breed-chars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.char-card {
+  background: #f8faff;
+  border: 1.5px solid #dce8ff;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.char-icon { font-size: 1.4rem; }
+.char-label { font-size: 0.75rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
+.char-value { font-size: 1rem; font-weight: 900; color: #1a1a2e; }
+
+.chars-not-found {
+  background: #fffbeb; border: 1.5px solid #fde68a;
+  border-radius: 14px; padding: 1.2rem; color: #92400e;
+  font-weight: 700; font-size: 0.9rem; margin-bottom: 1.5rem;
+}
+
+.btn-new-search {
+  background: #f0f4ff; color: #16479d; border: 1.5px solid #c7d9f5;
+  padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 800;
+  font-size: 0.9rem; font-family: 'Nunito', sans-serif;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-new-search:hover { background: #dce8ff; }
+
+
+.suggestions-title {
+  font-size: 0.95rem; color: #555; font-weight: 700; margin-bottom: 1.2rem;
+}
+.breeds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+.breed-card {
+  background: #fff; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 0 0 2px #dce8ff, 0 6px 20px rgba(22,71,157,0.08);
+  cursor: pointer; transition: transform 0.25s, box-shadow 0.25s;
+}
+.breed-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2.5px #16479d, 0 16px 36px rgba(22,71,157,0.16);
+}
+.breed-card-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.breed-card-img-placeholder {
+  width: 100%; height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; background: linear-gradient(135deg, #f0f4ff, #e8f0fe);
+}
+.breed-card-body { padding: 1rem 1.1rem 1.2rem; }
+.breed-card-name { font-size: 1rem; font-weight: 900; color: #1a1a2e; text-transform: capitalize; margin-bottom: 0.2rem; }
+.breed-card-sub  { font-size: 0.82rem; color: #888; font-weight: 700; margin-bottom: 0.4rem; }
+.breed-card-action { font-size: 0.82rem; color: #16479d; font-weight: 800; }
+
+
+.facts-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 2rem; gap: 1rem; flex-wrap: wrap;
+}
+.facts-header h2 { font-size: 1.6rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.2rem; }
+.facts-source { font-size: 0.82rem; color: #aaa; font-weight: 700; }
+
+.btn-new-facts {
+  background: #16479d; color: #fff; border: none;
+  padding: 0.7rem 1.5rem; border-radius: 50px; font-weight: 800;
+  font-size: 0.9rem; font-family: 'Nunito', sans-serif;
+  cursor: pointer; white-space: nowrap; transition: background 0.2s;
+}
+.btn-new-facts:hover:not(:disabled) { background: #0f3278; }
+.btn-new-facts:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+.fact-card {
+  background: #fff; border-radius: 18px; padding: 1.4rem;
+  border: 1.5px solid #eef1f8;
+  box-shadow: 0 4px 16px rgba(22,71,157,0.06);
+  display: flex; gap: 1rem; align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.fact-card:hover { box-shadow: 0 8px 28px rgba(22,71,157,0.12); }
+.fact-icon { font-size: 1.8rem; flex-shrink: 0; }
+.fact-number { font-size: 0.72rem; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+.fact-text { font-size: 0.93rem; color: #333; line-height: 1.6; font-weight: 600; }
+
+
+@media (max-width: 900px) {
+  .explore-content { padding: 2rem 1.5rem 4rem; }
+  .explore-tabs { padding: 0 1.5rem; }
+  .breed-detail-panel { grid-template-columns: 1fr; }
+  .breeds-grid { grid-template-columns: repeat(2, 1fr); }
+  .facts-grid { grid-template-columns: 1fr; }
+  .breed-detail-gallery { grid-template-columns: 1fr 1fr; }
+  .breed-detail-gallery .gallery-main { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .explore-hero { padding: 2.5rem 1.5rem; }
+  .explore-hero h1 { font-size: 1.8rem; }
+  .breeds-grid { grid-template-columns: 1fr; }
+  .breed-chars-grid { grid-template-columns: 1fr 1fr; }
+  .explore-api-badges { flex-direction: column; align-items: center; }
+}
+
+
+.api-badge--green {
+  background: rgba(134, 239, 172, 0.25);
+  border: 1.5px solid rgba(134, 239, 172, 0.5);
+  color: #dcfce7;
+}
+.spinner--purple {
+  border-color: #ede9fe;
+  border-top-color: #7c3aed;
+}
+.translate-sub {
+  font-size: 0.82rem;
+  color: #7c3aed;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+.progress-bar-wrap {
+  width: 260px;
+  height: 8px;
+  background: #ede9fe;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 0.6rem;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  border-radius: 50px;
+  transition: width 0.4s ease;
+}
+.translation-badge {
+  display: inline-block;
+  background: #f3e8ff;
+  color: #7c3aed;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid #d8b4fe;
+  margin-top: 0.5rem;
+}
+.breed-desc-wrapper {
+  margin-bottom: 1.2rem;
+}
+.facts-translated-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f3e8ff;
+  border: 1.5px solid #d8b4fe;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6d28d9;
+  margin-bottom: 1.5rem;
+}

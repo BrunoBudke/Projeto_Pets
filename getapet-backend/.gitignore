@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+.env
+public/images/users/*.jpg
+public/images/users/*.png
+public/images/pets/*.jpg
+public/images/pets/*.png

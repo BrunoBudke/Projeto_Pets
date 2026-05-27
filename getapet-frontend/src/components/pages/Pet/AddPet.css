@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.addpet-page { min-height: 100vh; background: linear-gradient(160deg,#f0f4ff,#faf5ff); font-family:'Nunito',sans-serif; }
+
+.addpet-main { max-width: 700px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+.addpet-header { margin-bottom: 2.5rem; }
+.addpet-header h1 { font-size: 2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.3rem; }
+.addpet-header p  { color: #888; font-size: 0.95rem; }
+
+.addpet-card {
+  background: #fff; border-radius: 24px; padding: 2.5rem;
+  box-shadow: 0 0 0 2px #dce8ff, 0 12px 36px rgba(22,71,157,0.08);
+}
+
+.addpet-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.addpet-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+.addpet-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.addpet-field label { font-size: 0.85rem; font-weight: 700; color: #444; }
+.addpet-field input,
+.addpet-field textarea,
+.addpet-field select {
+  padding: 0.8rem 1rem; border: 2px solid #e8edf5; border-radius: 12px;
+  font-size: 0.95rem; font-family:'Nunito',sans-serif; color: #1a1a2e;
+  outline: none; transition: border-color 0.2s; resize: vertical;
+  background: #fff;
+}
+.addpet-field input:focus,
+.addpet-field textarea:focus,
+.addpet-field select:focus { border-color: #16479d; }
+.addpet-field input::placeholder,
+.addpet-field textarea::placeholder { color: #bbb; }
+
+
+.addpet-upload-area {
+  border: 2.5px dashed #c7d9f5; border-radius: 16px;
+  padding: 2rem; text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.addpet-upload-area:hover { border-color: #16479d; background: #f0f7ff; }
+.addpet-upload-icon { font-size: 2.5rem; }
+.addpet-upload-text { font-weight: 700; color: #16479d; font-size: 0.95rem; }
+.addpet-upload-sub  { font-size: 0.8rem; color: #aaa; }
+
+.addpet-previews {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-top: 0.75rem;
+}
+.addpet-preview-img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 10px; border: 2px solid #dce8ff;
+}
+
+.addpet-submit {
+  background: linear-gradient(135deg,#16479d,#2563eb); color: #fff; border: none;
+  padding: 1rem; border-radius: 14px; font-size: 1.05rem; font-weight: 900;
+  font-family:'Nunito',sans-serif; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(22,71,157,0.3); transition: opacity 0.2s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+.addpet-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-2px); }
+.addpet-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.addpet-no-auth {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 50vh; gap: 1rem; text-align: center;
+}
+.addpet-no-auth span { font-size: 3.5rem; }
+.addpet-no-auth h2 { color: #1a1a2e; font-size: 1.5rem; font-weight: 900; }
+.addpet-no-auth p  { color: #888; }
+.addpet-no-auth a  { color: #16479d; font-weight: 800; text-decoration: none; }
+
+@media (max-width: 600px) {
+  .addpet-card { padding: 1.5rem; }
+  .addpet-row  { grid-template-columns: 1fr; }
+  .addpet-previews { grid-template-columns: repeat(3, 1fr); }
+}
