@@ -1,4 +1,4 @@
-﻿name: CI - Continuous Integration
+name: CI - Continuous Integration
 
 on:
   push:
@@ -35,3 +35,10 @@ jobs:
           JWT_SECRET: test-secret-for-ci
           MONGO_URI: mongodb://localhost:27017/test
           PORT: 5000
+
+      - name: Scan de dependencias
+        working-directory: getapet-backend
+        run: npm audit --audit-level=high || true
+
+      - name: Build Docker image
+        run: docker build -t getapet-backend ./getapet-backend
