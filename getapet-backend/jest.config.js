@@ -15,6 +15,7 @@ module.exports = {
     },
   },
   testMatch: ['**/tests/**/*.test.js'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/selenium/'],
   coverageReporters: ['text', 'lcov', 'html'],
   verbose: true,
 }
